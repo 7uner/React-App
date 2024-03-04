@@ -13,7 +13,7 @@ function FloorMap() {
         <TopNav />
         <NavBar />
         <FloorGroup />
-        <FloorMenu />
+        
         <LatestCarousel />
         <Footer />
       </div>

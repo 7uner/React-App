@@ -25,10 +25,14 @@ function ContactInfo({ firstName, lastName, email, comment }: Props) {
     <form onSubmit={handleSubmit}>
       <div className="container-sm">
         <div className="row">
-          <div className="col-6 border">
+          <div className="col-6 border-0">
             <div
               className="card-body p-3 m-5 text-center ms-auto me-2"
-              style={{ width: 300, backgroundColor: "#F0F0F0" }}
+              style={{
+                width: "100%",
+                backgroundColor: "#F0F0F0",
+                borderRadius: 15,
+              }}
             >
               <label htmlFor="exampleFormControlInput1" className="form-label">
                 First Name
@@ -44,10 +48,14 @@ function ContactInfo({ firstName, lastName, email, comment }: Props) {
               ></input>
             </div>
           </div>
-          <div className="col-6 border">
+          <div className="col-6 border-0">
             <div
               className="card-body p-3 m-5 text-center ms-2 me-auto"
-              style={{ width: 300, backgroundColor: "#F0F0F0" }}
+              style={{
+                width: "100%",
+                backgroundColor: "#F0F0F0",
+                borderRadius: 15,
+              }}
             >
               <label htmlFor="exampleFormControlInput1" className="form-label">
                 Last Name
@@ -65,10 +73,14 @@ function ContactInfo({ firstName, lastName, email, comment }: Props) {
           </div>
         </div>
         <div className="row">
-          <div className="col border">
+          <div className="col border-0">
             <div
               className="card-body p-3 m-5 text-center mx-auto"
-              style={{ width: 800, backgroundColor: "#F0F0F0" }}
+              style={{
+                width: "100%",
+                backgroundColor: "#F0F0F0",
+                borderRadius: 15,
+              }}
             >
               <label htmlFor="exampleFormControlInput1" className="form-label">
                 Email
@@ -84,14 +96,15 @@ function ContactInfo({ firstName, lastName, email, comment }: Props) {
               ></input>
             </div>
           </div>
-
-          <div className="col border">
+        </div>
+        <div className="row">
+          <div className="col border-0">
             <div
               className="card-body p-3 m-5 text-center mx-auto"
               style={{
-                width: 600,
                 backgroundColor: "#F0F0F0",
                 boxShadow: "20px 20px 1px 1px #013F8A",
+                borderRadius: 15,
               }}
             >
               <label htmlFor="exampleFormControlInput1" className="form-label">
@@ -113,9 +126,10 @@ function ContactInfo({ firstName, lastName, email, comment }: Props) {
         <div className="p-2 m-2 text-center mx-auto">
           <button
             type="submit"
-            className="p-2 m-2 btn btn-primary btn-lg"
+            className=" btn btn-primary btn-lg"
             style={{
               backgroundColor: "#0078B6",
+              borderRadius: 20,
             }}
           >
             <p>Submit</p>

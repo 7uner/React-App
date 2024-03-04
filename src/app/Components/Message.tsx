@@ -3,7 +3,15 @@ interface Props {
 }
 
 function Message({ msg }: Props) {
-  return <h1>{msg}</h1>;
+  return (
+    <h2
+      style={{
+        margin: 10,
+      }}
+    >
+      {msg}
+    </h2>
+  );
 }
 
 export default Message;

@@ -11,8 +11,8 @@ function ContactUs() {
     <div>
       <TopNav />
       <NavBar />
-      <div className="Container w-75">
-        <div className="row">
+      <div>
+        <div className="row m-5">
           <div className="col-4">
             <Reminder />
           </div>

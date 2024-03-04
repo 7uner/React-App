@@ -1,4 +1,5 @@
 import { useState, MouseEvent, Fragment } from "react";
+import FloorMenu from "./FloorMenu";
 
 function FloorGroup() {
   let floors = ["1st floor", "2nd floor", "3rd floor", "4th floor"];
@@ -64,7 +65,7 @@ function FloorGroup() {
               {floor}
             </li>
           ))}
-
+<FloorMenu />
           <li
             // how to do a basic onClick event with a shorthand function
             className="list-group-item"

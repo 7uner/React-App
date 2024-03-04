@@ -16,9 +16,32 @@ function Home() {
         style={{
           backgroundColor: "#F0F0F0",
           boxShadow: "20px 20px 1px 1px #013F8A",
+          borderRadius: 10,
+          padding: 10
         }}
       >
-        <Message msg={"Select a hospital location to view a detailed layout"} />
+        <div
+          style={{
+            width: "95%",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "1rem"
+          }}
+        >
+          <Message
+            msg={"Select a hospital location to view a detailed layout"}
+          />
+          <button
+            type="button"
+            className="btn btn-primary btn-lg "
+            style={{
+              backgroundColor: "#0078B6",
+            }}
+          >
+            Button
+          </button>
+        </div>
         <div className="container">
           <div className="row">
             <div className="col-sm">
