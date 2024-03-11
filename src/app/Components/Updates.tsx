@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Reminder from "./Reminder";
+import Card from "./Card";
 
 function Updates() {
   //hook to retrive data from scrapper
@@ -61,18 +62,56 @@ function Updates() {
                 General
               </button>
             </div>
+            
+            <div>
+              {data.map((news) => (
+                <div className="col-sm" style={{width: "60%"}}>
+                  <Card
+                    address={news.title}
+                    image={news.image}
+                    hospitalName={"Visit"}
+                    link={news.link}
+                  />
+                </div>
+              ))}
+            </div>
+              
+
+              {/*
+            <div>
+              {data.map((news) => (
+                <div className="col-sm" style={{}}>
+                  <col>
+                    <img
+                      src={news.image}
+                      className="single-img h-100 w-100"
+                      alt="..."
+                      style={{
+                        borderRadius: 10,
+                      }}
+                    />
+                  </col>
+                  <col>
+                    <h2>news.title</h2>
+                    <a
+                      href="#"
+                      className="btn btn-primary btn-lg active"
+                      role="button"
+                      aria-pressed="true"
+                      style={{
+                        backgroundColor: "#0078B6",
+                        borderRadius: 20,
+                      }}
+                    >
+                      {news.title}
+                    </a>
+                  </col>
+                </div>
+              ))}
+            </div>
+                    */}
           </div>
         </div>
-      </div>
-      <div>
-        {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : "Loading..."}
-      </div>
-      <div>
-        {data.map((news) => (
-          <div key={news.title}>
-            <p>{news.title}</p>
-          </div>
-        ))}
       </div>
     </div>
   );

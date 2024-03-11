@@ -3,6 +3,7 @@ import TopNav from "../app/Components/TopNav";
 import NavBar from "../app/Components/NavBar";
 import Footer from "../app/Components/Footer";
 import Card from "../app/Components/Card";
+import FloorMap from "./FloorMap";
 
 function Location() {
   return (
@@ -18,6 +19,7 @@ function Location() {
                 address={"Lobby"}
                 image={"./src/assets/toronto (1).jpg"}
                 hospitalName={""}
+                link="FloorMap"
               />
             </div>
             <div className="col-3">
@@ -25,6 +27,7 @@ function Location() {
                 address={"Check in"}
                 image={"./src/assets/toronto (2).jpg"}
                 hospitalName={""}
+                link="FloorMap"
               />
             </div>
             <div className="col-3">
@@ -32,6 +35,7 @@ function Location() {
                 address={"Washroom"}
                 image={"./src/assets/toronto (3).jpg"}
                 hospitalName={""}
+                link="FloorMap"
               />
             </div>
             <div className="col-3">
@@ -39,6 +43,7 @@ function Location() {
                 address={"Doctor's Office"}
                 image={"./src/assets/toronto (4).jpg"}
                 hospitalName={""}
+                link="FloorMap"
               />
             </div>
           </div>
@@ -48,6 +53,7 @@ function Location() {
                 address={"Labs"}
                 image={"./src/assets/toronto (5).jpg"}
                 hospitalName={""}
+                link="FloorMap"
               />
             </div>
             <div className="col-3">
@@ -55,6 +61,7 @@ function Location() {
                 address={"Cafeteria"}
                 image={"./src/assets/toronto (6).jpg"}
                 hospitalName={""}
+                link="FloorMap"
               />
             </div>
             <div className="col-3">
@@ -62,6 +69,7 @@ function Location() {
                 address={"EMS Room"}
                 image={"./src/assets/toronto (7).jpg"}
                 hospitalName={""}
+                link="FloorMap"
               />
             </div>
             <div className="col-3">
@@ -69,6 +77,7 @@ function Location() {
                 address={"Bed Rooms"}
                 image={"./src/assets/toronto (8).jpg"}
                 hospitalName={""}
+                link="FloorMap"
               />
             </div>
           </div>

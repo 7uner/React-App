@@ -2,13 +2,14 @@ interface Props {
   address: string;
   image: string;
   hospitalName: string;
+  link: string;
 }
 
-function Card({ address, image, hospitalName }: Props) {
+function Card({ address, image, hospitalName, link }: Props) {
   //we want to have this component represent a single card
   return (
     <div className="card border-0">
-      <div className="card-body" style={{backgroundColor:"#F0F0F0"}}>
+      <div className="card-body" style={{ backgroundColor: "#F0F0F0" }}>
         <div className="card_img">
           <img
             src={image}
@@ -20,7 +21,9 @@ function Card({ address, image, hospitalName }: Props) {
           />
 
           <div className="card-img-overlay d-flex align-items-center align-content-center justify-content-center">
-            <h5 className="card-title">{address}</h5>
+            <h5 className="card-title" style={{ alignContent: "center" }}>
+              {address}
+            </h5>
           </div>
         </div>
         <h2
@@ -38,9 +41,11 @@ function Card({ address, image, hospitalName }: Props) {
             textAlign: "center",
           }}
         >
-          <button
-            type="button"
-            className="btn btn-primary btn-lg "
+          <a
+            role="button"
+            href={link}
+            className="btn btn-primary btn-lg active"
+            aria-pressed="true"
             style={{
               backgroundColor: "#0078B6",
               display: hospitalName === "" ? "none" : "inline",
@@ -48,7 +53,7 @@ function Card({ address, image, hospitalName }: Props) {
             }}
           >
             {hospitalName}
-          </button>
+          </a>
         </div>
       </div>
     </div>

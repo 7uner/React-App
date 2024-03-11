@@ -54,6 +54,20 @@ const getQuotes = async () => {
       return { title, date, image, link };
     });
   });
+// Get page data
+const quotes2 = await page.evaluate(() => {
+  // Fetch the first element with class "quote"
+  const remind = document.querySelectorAll(".wp-block-group__inner-container");
+{/*}
+  // Fetch the sub-elements from the previously fetched quote element
+  // Get the displayed text and return it (`.innerText`)
+  return Array.from(remind).map((news2) => {
+    const image2 = news2.querySelector(".sr-only").getAttribute("src");
+    const blurb = news2.querySelector(".has-white-color has-text-color").innerText;
+    return { image2, blurb };
+  });
+*/}
+});
 
   // Display the quotes
   //console.log(quotes);

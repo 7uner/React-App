@@ -1,4 +1,16 @@
+import { useEffect, useState } from "react";
+
 function Reminder() {
+  //hook to retrive data from scrapper
+  const [data, setData] = useState<any[]>([]);
+
+  //fetch data
+  useEffect(() => {
+    fetch("http://localhost:4000/scrapeNews")
+      .then((response) => response.json())
+      .then((json) => setData(json))
+      .catch((error) => console.error(error));
+  }, []);
   return (
     <div
       style={{
@@ -14,7 +26,7 @@ function Reminder() {
           borderRadius: 20,
           flex: 1,
           padding: 20,
-          marginBottom: 20
+          marginBottom: 20,
         }}
       >
         <p className="card-text">
@@ -24,7 +36,7 @@ function Reminder() {
           role="button"
           href="https://www.shn.ca/"
           className="btn btn-primary btn-lg"
-          style={{ backgroundColor: "#0078B6", borderRadius:20 }}
+          style={{ backgroundColor: "#0078B6", borderRadius: 20 }}
         >
           Official SHN Website
         </a>
@@ -39,12 +51,27 @@ function Reminder() {
           padding: 20,
         }}
       >
-        <p className="card-text">website blurb</p>
+        <div>
+          {data.map((news2) => (
+            <div className="col-sm" style={{ width: "60%" }}>
+              <img
+                src={news2.image2}
+                className="single-img h-100 w-100"
+                alt="..."
+                style={{
+                  borderRadius: 10,
+                }}
+              />
+              <p>{news2.blurb}</p>
+            </div>
+          ))}
+        </div>
+
         <a
           role="button"
           href="https://shnfoundation.akaraisin.com/ui/DonateNow/donations/start"
           className="btn btn-primary btn-lg "
-          style={{ backgroundColor: "#0078B6", borderRadius:20 }}
+          style={{ backgroundColor: "#0078B6", borderRadius: 20 }}
         >
           Donate Today
         </a>

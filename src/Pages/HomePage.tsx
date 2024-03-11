@@ -49,6 +49,7 @@ function Home() {
                 address={"3030 Birchmount Rd, Scarborough, ON M1W 3W3, Canada"}
                 image={"./src/assets/birchmount.png"}
                 hospitalName={"Birchmount Hospital"}
+                link="Location"
               />
             </div>
             <div className="col-sm">
@@ -56,6 +57,7 @@ function Home() {
                 address={"2867 Ellesmere Rd, Scarborough, ON M1E 4B9, Canada"}
                 image={"./src/assets/centenary.png"}
                 hospitalName={"Centenary Hospital"}
+                link="Location"
               />
             </div>
             <div className="col-sm">
@@ -63,6 +65,7 @@ function Home() {
                 address={"3050 Lawrence Ave E, Scarborough, ON M1P 2V5, Canada"}
                 image={"./src/assets/general.png"}
                 hospitalName={"General Hospital"}
+                link="Location"
               />
             </div>
           </div>
