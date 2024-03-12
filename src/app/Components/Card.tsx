@@ -44,7 +44,7 @@ function Card({ address, image, hospitalName, link }: Props) {
           <a
             role="button"
             href={link}
-            className="btn btn-primary btn-lg active"
+            className="btn btn-primary btn-lg"
             aria-pressed="true"
             style={{
               backgroundColor: "#0078B6",

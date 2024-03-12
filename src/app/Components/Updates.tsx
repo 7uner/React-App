@@ -17,13 +17,15 @@ function Updates() {
   return (
     <div className="container-sm">
       <div className="row border d-flex border-0">
-        <div
-          className="border-0"
-          style={{ width: "100%", borderRadius: 20, display: "flex" }}
-        >
-          <Reminder />
+        <div className="col-4">
+          <div
+            className="border-0"
+            style={{ width: "100%", borderRadius: 20, display: "flex" }}
+          >
+            <Reminder />
+          </div>
         </div>
-        <div className="col-7 border-0 d-flex" style={{}}>
+        <div className="col-8 border-0 d-flex" style={{}}>
           <div
             className="card-body"
             style={{
@@ -32,56 +34,10 @@ function Updates() {
               borderRadius: 20,
             }}
           >
-            <div
-              style={{
-                backgroundColor: "#F0F0F0",
-                borderRadius: 20,
-                display: "flex",
-                justifyContent: "space-between",
-              }}
-            >
-              <button
-                type="button"
-                className="btn btn-primary btn-lg "
-                style={{ backgroundColor: "#0078B6" }}
-              >
-                Birchmount
-              </button>
-              <button
-                type="button"
-                className="btn btn-primary btn-lg "
-                style={{ backgroundColor: "#0078B6" }}
-              >
-                Centenary
-              </button>
-              <button
-                type="button"
-                className="btn btn-primary btn-lg "
-                style={{ backgroundColor: "#0078B6" }}
-              >
-                General
-              </button>
-            </div>
-            
-            <div>
+            <div className="container-sm">
               {data.map((news) => (
-                <div className="col-sm" style={{width: "60%"}}>
-                  <Card
-                    address={news.title}
-                    image={news.image}
-                    hospitalName={"Visit"}
-                    link={news.link}
-                  />
-                </div>
-              ))}
-            </div>
-              
-
-              {/*
-            <div>
-              {data.map((news) => (
-                <div className="col-sm" style={{}}>
-                  <col>
+                <div className="row">
+                  <div className="col-6">
                     <img
                       src={news.image}
                       className="single-img h-100 w-100"
@@ -90,11 +46,11 @@ function Updates() {
                         borderRadius: 10,
                       }}
                     />
-                  </col>
-                  <col>
-                    <h2>news.title</h2>
+                  </div>
+                  <div className="col-6">
+                    <h2>{news.title}</h2>
                     <a
-                      href="#"
+                      href={news.link}
                       className="btn btn-primary btn-lg active"
                       role="button"
                       aria-pressed="true"
@@ -103,13 +59,12 @@ function Updates() {
                         borderRadius: 20,
                       }}
                     >
-                      {news.title}
+                      See More
                     </a>
-                  </col>
+                  </div>
                 </div>
               ))}
             </div>
-                    */}
           </div>
         </div>
       </div>

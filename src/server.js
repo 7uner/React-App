@@ -54,11 +54,15 @@ const getQuotes = async () => {
       return { title, date, image, link };
     });
   });
-// Get page data
-const quotes2 = await page.evaluate(() => {
-  // Fetch the first element with class "quote"
-  const remind = document.querySelectorAll(".wp-block-group__inner-container");
-{/*}
+
+  // Get page data
+  const quotes2 = await page.evaluate(() => {
+    // Fetch the first element with class "quote"
+    const remind = document.querySelectorAll(
+      ".wp-block-group__inner-container"
+    );
+    {
+      /*}
   // Fetch the sub-elements from the previously fetched quote element
   // Get the displayed text and return it (`.innerText`)
   return Array.from(remind).map((news2) => {
@@ -66,8 +70,9 @@ const quotes2 = await page.evaluate(() => {
     const blurb = news2.querySelector(".has-white-color has-text-color").innerText;
     return { image2, blurb };
   });
-*/}
-});
+*/
+    }
+  });
 
   // Display the quotes
   //console.log(quotes);
@@ -75,6 +80,26 @@ const quotes2 = await page.evaluate(() => {
   await browser.close();
 
   return quotes;
+};
+
+const getDonation = async () => {
+  // Start a Puppeteer session with:
+  // - a visible browser (`headless: false` - easier to debug because you'll see the browser in action)
+  // - no default viewport (`defaultViewport: null` - website page will in full width and height)
+  const browser = await puppeteer.launch({
+    headless: false,
+    defaultViewport: null,
+  });
+
+  // Open a new page
+  const page = await browser.newPage();
+
+  // On this new page:
+  // - open the "http://quotes.toscrape.com/" website
+  // - wait until the dom content is loaded (HTML is ready)
+  await page.goto("https://www.shn.ca/", {
+    waitUntil: "domcontentloaded",
+  });
 };
 
 // Start the scraping
