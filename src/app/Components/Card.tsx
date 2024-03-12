@@ -5,7 +5,7 @@ interface Props {
   link: string;
 }
 
-function Card({ address, image, hospitalName, link }: Props) {
+function Card({address, image, hospitalName, link}: Props) {
   //we want to have this component represent a single card
   return (
     <div className="card border-0">

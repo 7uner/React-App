@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 
 function Reminder() {
   //hook to retrive data from scrapper
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<any>();
 
   //fetch data
   useEffect(() => {
-    fetch("http://localhost:4000/scrapeNews")
+    fetch("http://localhost:4000/scrapeDonation")
       .then((response) => response.json())
       .then((json) => setData(json))
       .catch((error) => console.error(error));
@@ -52,19 +52,17 @@ function Reminder() {
         }}
       >
         <div>
-          {data.map((news2) => (
-            <div className="col-sm" style={{ width: "60%" }}>
-              <img
-                src={news2.image2}
-                className="single-img h-100 w-100"
-                alt="..."
-                style={{
-                  borderRadius: 10,
-                }}
-              />
-              <p>{news2.blurb}</p>
-            </div>
-          ))}
+          <div className="col-sm" style={{ width: "60%" }}>
+            <img
+              src={data.image2}
+              className="single-img h-100 w-100"
+              alt="..."
+              style={{
+                borderRadius: 10,
+              }}
+            />
+            <p>{data.blurb}</p>
+          </div>
         </div>
 
         <a

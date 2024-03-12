@@ -10,7 +10,7 @@ function FloorMenu() {
     "4th floor":
       "https://images.pexels.com/photos/914128/pexels-photo-914128.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200",
   };
-
+// onClick={() => console.log("we are clicking hard coded floor!")}
   return (
     <div className="accordion" id="accordionExample">
       <div className="accordion-item">

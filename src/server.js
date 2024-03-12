@@ -20,6 +20,13 @@ app.get("/scrapeNews", async (_req, res) => {
   res.json(test);
 });
 
+// All remaining requests return the React app, so it can handle routing.
+app.get("/scrapeDonation", async (_req, res) => {
+  //res.setHeader("Content-Type", "application/json");
+  let test = await getDonation();
+  res.json(test);
+});
+
 const getQuotes = async () => {
   // Start a Puppeteer session with:
   // - a visible browser (`headless: false` - easier to debug because you'll see the browser in action)
@@ -55,25 +62,6 @@ const getQuotes = async () => {
     });
   });
 
-  // Get page data
-  const quotes2 = await page.evaluate(() => {
-    // Fetch the first element with class "quote"
-    const remind = document.querySelectorAll(
-      ".wp-block-group__inner-container"
-    );
-    {
-      /*}
-  // Fetch the sub-elements from the previously fetched quote element
-  // Get the displayed text and return it (`.innerText`)
-  return Array.from(remind).map((news2) => {
-    const image2 = news2.querySelector(".sr-only").getAttribute("src");
-    const blurb = news2.querySelector(".has-white-color has-text-color").innerText;
-    return { image2, blurb };
-  });
-*/
-    }
-  });
-
   // Display the quotes
   //console.log(quotes);
   // Close the browser
@@ -97,9 +85,32 @@ const getDonation = async () => {
   // On this new page:
   // - open the "http://quotes.toscrape.com/" website
   // - wait until the dom content is loaded (HTML is ready)
-  await page.goto("https://www.shn.ca/", {
+  await page.goto("https://www.shn.ca/careers-volunteering/", {
     waitUntil: "domcontentloaded",
   });
+
+  // Get page data
+  const quotes2 = await page.evaluate(() => {
+    // Fetch the first element with class "quote"
+    const remind = document.querySelector(
+      ".wp-block-group__inner-container"
+    );
+
+  // Fetch the sub-elements from the previously fetched quote element
+  // Get the displayed text and return it (`.innerText`)
+    const image2 = remind.querySelector(".wp-image-22290").getAttribute("src");
+    const blurb = remind.querySelector(".has-white-color").innerText;
+
+    return { image2,blurb};
+    
+  });
+    
+  // Display the quotes
+  //console.log(quotes);
+  // Close the browser
+  await browser.close();
+
+  return quotes2;
 };
 
 // Start the scraping
