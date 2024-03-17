@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 function Reminder() {
   //hook to retrive data from scrapper
-  const [data, setData] = useState<any>();
+  const [data, setData] = useState<any>({});
 
   //fetch data
   useEffect(() => {
