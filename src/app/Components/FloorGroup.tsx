@@ -1,16 +1,18 @@
 import { useState, MouseEvent, Fragment } from "react";
 import FloorMenu from "./FloorMenu";
+import FloorMenuBirchmount from "./FloorMenuBirchmount";
+import FloorMenuCentenary from "./FloorMenuCentenary";
 
 function FloorGroup() {
   let floors = ["1st floor", "2nd floor", "3rd floor", "4th floor"];
   let floorImages: { [key: string]: string } = {
-    "1st floor":
+    "Floor 1":
       "https://images.pexels.com/photos/753873/pexels-photo-753873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200",
-    "2nd floor":
+    "Floor 2":
       "https://images.pexels.com/photos/679277/pexels-photo-679277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200",
-    "3rd floor":
+    "Floor 3":
       "https://images.pexels.com/photos/5486/bird-s-eye-view-cars-crossing-crossroad.jpg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200",
-    "4th floor":
+    "Floor 4":
       "https://images.pexels.com/photos/914128/pexels-photo-914128.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200",
   };
 
@@ -18,9 +20,9 @@ function FloorGroup() {
 
   // arr[0] variable of our selected index
   // arr[1] updater function, which will update DOM automatically
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  //const [selectedIndex, setSelectedIndex] = useState(0);
   //another hook for images
-  const [selectedImage, setSelectedImage] = useState("1st floor");
+  //const [selectedImage, setSelectedImage] = useState("Floor 1");
 
   // Event Handler Function
   const handleClick = (event: MouseEvent) =>
@@ -46,14 +48,14 @@ function FloorGroup() {
               Search
             </button>
           </form>
-
+          {/*
           {floors.map((floor, index) => (
             // render content dinamically with a if condition
             <li
               className={
                 selectedIndex === index
-                  ? "list-group-item active"
-                  : "list-group-item"
+                  ? "list-group-item active" // aria-expanded="true"
+                  : "list-group-item" // aria-expanded="false"
               }
               key={floor}
               onClick={() => {
@@ -65,7 +67,9 @@ function FloorGroup() {
               {floor}
             </li>
           ))}
-<FloorMenu />
+            */}
+          <FloorMenu />
+          <FloorMenuBirchmount />
           <li
             // how to do a basic onClick event with a shorthand function
             className="list-group-item"
@@ -77,15 +81,7 @@ function FloorGroup() {
             Another hard coded floor
           </li>
         </ul>
-        <div className="col-7 border d-flex">
-          <img
-            // we render the image as a fragment, and we render this dynamically with states
-            src={floorImages[selectedImage]}
-            className="d-block img-fluid w-100 text-center"
-          ></img>
-        </div>
       </div>
-      
     </div>
   );
 }

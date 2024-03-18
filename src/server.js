@@ -101,7 +101,7 @@ const getDonation = async () => {
     const image2 = remind.querySelector(".wp-image-22290").getAttribute("src");
     const blurb = remind.querySelector(".has-white-color").innerText;
 
-    return { image2,blurb};
+    return {image2,blurb};
     
   });
     

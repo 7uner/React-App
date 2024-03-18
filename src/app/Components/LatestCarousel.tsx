@@ -8,9 +8,8 @@ function LatestCarousel() {
         backgroundColor: "#F0F0F0",
       }}
     >
-      <div
-        className="carousel-indicators"
-      >
+      <h3 className=" p-3">Important Locations</h3>
+      <div className="carousel-indicators">
         <button
           type="button"
           data-bs-target="#carouselExampleCaptions"

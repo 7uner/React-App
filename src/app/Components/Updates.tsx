@@ -48,7 +48,13 @@ function Updates() {
                     />
                   </div>
                   <div className="col-6">
-                    <h2>{news.title}</h2>
+                    <p
+                      style={{
+                        justifyContent: "center",
+                      }}
+                    >
+                      {news.title}
+                    </p>
                     <a
                       href={news.link}
                       className="btn btn-primary btn-lg active"
