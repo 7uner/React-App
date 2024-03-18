@@ -1,13 +1,13 @@
 import { useState, MouseEvent, Fragment } from "react";
 function FloorMenuBirchmount() {
   let floorImages: { [key: string]: string } = {
-    "1st floor":
+    "Floor 1":
       "https://images.pexels.com/photos/753873/pexels-photo-753873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200",
-    "2nd floor":
+    "Floor 2":
       "https://images.pexels.com/photos/679277/pexels-photo-679277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200",
-    "3rd floor":
+    "Floor 3":
       "https://images.pexels.com/photos/5486/bird-s-eye-view-cars-crossing-crossroad.jpg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200",
-    "4th floor":
+    "Floor 4":
       "https://images.pexels.com/photos/914128/pexels-photo-914128.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200",
   };
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -17,7 +17,7 @@ function FloorMenuBirchmount() {
   return (
     <div className="container-sm">
       <div className="row border d-flex">
-        <div className="accordion" id="BirchmountLocation">
+        <div className="accordion col-6" id="BirchmountLocation">
           <div className="accordion-item">
             <h2 className="accordion-header" id="headingOne">
               <button

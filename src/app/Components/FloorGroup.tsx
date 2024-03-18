@@ -20,9 +20,9 @@ function FloorGroup() {
 
   // arr[0] variable of our selected index
   // arr[1] updater function, which will update DOM automatically
-  //const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   //another hook for images
-  //const [selectedImage, setSelectedImage] = useState("Floor 1");
+  const [selectedImage, setSelectedImage] = useState("Floor 1");
 
   // Event Handler Function
   const handleClick = (event: MouseEvent) =>
@@ -32,6 +32,7 @@ function FloorGroup() {
 
   return (
     <div className="container-sm">
+      <FloorMenuBirchmount />
       <div className="row border d-flex">
         <ul
           className="list-group p-3 m-5 me-auto col-6 border"
@@ -48,6 +49,7 @@ function FloorGroup() {
               Search
             </button>
           </form>
+
           {/*
           {floors.map((floor, index) => (
             // render content dinamically with a if condition
@@ -68,8 +70,6 @@ function FloorGroup() {
             </li>
           ))}
             */}
-          <FloorMenu />
-          <FloorMenuBirchmount />
           <li
             // how to do a basic onClick event with a shorthand function
             className="list-group-item"

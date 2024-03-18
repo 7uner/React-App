@@ -1,13 +1,13 @@
 import { useState, MouseEvent, Fragment } from "react";
 function FloorMenu() {
   let floorImages: { [key: string]: string } = {
-    "1st floor":
+    "floor 1":
       "https://images.pexels.com/photos/753873/pexels-photo-753873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200",
-    "2nd floor":
+    "floor 2":
       "https://images.pexels.com/photos/679277/pexels-photo-679277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200",
-    "3rd floor":
+    "floor 3":
       "https://images.pexels.com/photos/5486/bird-s-eye-view-cars-crossing-crossroad.jpg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200",
-    "4th floor":
+    "floor 4":
       "https://images.pexels.com/photos/914128/pexels-photo-914128.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200",
   };
 
