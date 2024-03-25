@@ -3,11 +3,16 @@ import express from "express";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import cors from "cors";
+import { MongoClient, ServerApiVersion } from "mongodb";
 
 const app = express();
 const PORT = 4000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+//mongodb
+const uri =
+  "mongodb+srv://winstonzhu:a12QNn9toY5I59dB@feedback.qa82eyz.mongodb.net/?retryWrites=true&w=majority&appName=FeedBack";
 
 // Middleware that parses json and looks at requests where the Content-Type header matches the type option.
 app.use(express.json());
@@ -92,19 +97,16 @@ const getDonation = async () => {
   // Get page data
   const quotes2 = await page.evaluate(() => {
     // Fetch the first element with class "quote"
-    const remind = document.querySelector(
-      ".wp-block-group__inner-container"
-    );
+    const remind = document.querySelector(".wp-block-group__inner-container");
 
-  // Fetch the sub-elements from the previously fetched quote element
-  // Get the displayed text and return it (`.innerText`)
+    // Fetch the sub-elements from the previously fetched quote element
+    // Get the displayed text and return it (`.innerText`)
     const image2 = remind.querySelector(".wp-image-22290").getAttribute("src");
     const blurb = remind.querySelector(".has-white-color").innerText;
 
-    return {image2,blurb};
-    
+    return { image2, blurb };
   });
-    
+
   // Display the quotes
   //console.log(quotes);
   // Close the browser
@@ -112,6 +114,51 @@ const getDonation = async () => {
 
   return quotes2;
 };
+
+//run mongodb client
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+});
+
+async function findMovie() {
+  // Get the database and collection on which to run the operation
+  const database = client.db("sample_mflix");
+  const movies = database.collection("movies");
+  // Query for a movie that has the title 'The Room'
+  const query = { title: "The Room" };
+  const options = {
+    // Sort matched documents in descending order by rating
+    sort: { "imdb.rating": -1 },
+    // Include only the `title` and `imdb` fields in the returned document
+    projection: { _id: 0, title: 1, imdb: 1 },
+  };
+  // Execute query
+  const movie = await movies.findOne(query, options);
+  // Print the document returned by findOne()
+  console.log(movie);
+}
+
+async function runDB() {
+  try {
+    // Connect the client to the server	(optional starting in v4.7)
+    await client.connect();
+    // Send a ping to confirm a successful connection
+    await client.db("admin").command({ ping: 1 });
+    console.log(
+      "Pinged your deployment. You successfully connected to MongoDB!"
+    );
+    await findMovie();
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+runDB().catch(console.dir);
 
 // Start the scraping
 app.listen(PORT, function (err) {

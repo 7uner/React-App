@@ -232,11 +232,11 @@ function FloorMenuBirchmount() {
             </div>
           </div>
         </div>
-        <div className="col-7 border d-flex">
+        <div className="col-6 border">
           <img
             // we render the image as a fragment, and we render this dynamically with states
             src={floorImages[selectedImage]}
-            className="d-block img-fluid w-100 text-center"
+            className="w-100 text-center"
           ></img>
         </div>
       </div>

@@ -51,7 +51,6 @@ function Reminder() {
           padding: 20,
         }}
       >
-        {/*
         <div>
           <div className="col-sm" style={{ width: "60%" }}>
             <img
@@ -65,7 +64,6 @@ function Reminder() {
             <p>{data.blurb}</p>
           </div>
         </div>
-            */}
         <a
           role="button"
           href="https://shnfoundation.akaraisin.com/ui/DonateNow/donations/start"
