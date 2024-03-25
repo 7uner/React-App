@@ -6,7 +6,7 @@ function Footer() {
     >
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          © 2023 Scarborough Health Network
+          © 2024 Scarborough Health Network
         </a>
         <button
           className="navbar-toggler"
@@ -38,34 +38,6 @@ function Footer() {
               <a className="nav-link" href="#">
                 Pricing
               </a>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown link
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
             </li>
           </ul>
         </div>

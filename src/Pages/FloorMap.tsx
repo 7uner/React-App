@@ -2,7 +2,7 @@ import Message from "../app/Components/Message";
 import TopNav from "../app/Components/TopNav";
 import NavBar from "../app/Components/NavBar";
 import FloorGroup from "../app/Components/FloorGroup";
-import FloorMenu from "../app/Components/FloorMenu";
+import FloorMenu from "./FloorMenuGeneral";
 import Footer from "../app/Components/Footer";
 import LatestCarousel from "../app/Components/LatestCarousel";
 
@@ -13,7 +13,7 @@ function FloorMap() {
         <TopNav />
         <NavBar />
         <FloorGroup />
-        
+
         <LatestCarousel />
         <Footer />
       </div>

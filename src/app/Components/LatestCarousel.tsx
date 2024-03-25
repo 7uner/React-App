@@ -41,8 +41,7 @@ function LatestCarousel() {
                 alt="..."
               />
               <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">Location 1</p>
+                <p className="card-text">Patient Registration</p>
                 <p className="card-text">
                   <small className="text-muted">Floor 1</small>
                 </p>
@@ -55,8 +54,7 @@ function LatestCarousel() {
                 alt="..."
               />
               <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">Location 2</p>
+                <p className="card-text">Emergency</p>
                 <p className="card-text">
                   <small className="text-muted">Floor 3</small>
                 </p>
@@ -69,8 +67,7 @@ function LatestCarousel() {
                 alt="..."
               />
               <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">Location 3</p>
+                <p className="card-text">Intensive Care Unit</p>
                 <p className="card-text">
                   <small className="text-muted">Floor 2</small>
                 </p>

@@ -31,6 +31,7 @@ function ContactInfo({ firstName, lastName, email, comment }: Props) {
               style={{
                 width: "100%",
                 backgroundColor: "#F0F0F0",
+                boxShadow: "15px 15px 1px 1px #013F8A",
                 borderRadius: 15,
               }}
             >
@@ -54,6 +55,7 @@ function ContactInfo({ firstName, lastName, email, comment }: Props) {
               style={{
                 width: "100%",
                 backgroundColor: "#F0F0F0",
+                boxShadow: "15px 15px 1px 1px #013F8A",
                 borderRadius: 15,
               }}
             >
@@ -79,6 +81,7 @@ function ContactInfo({ firstName, lastName, email, comment }: Props) {
               style={{
                 width: "100%",
                 backgroundColor: "#F0F0F0",
+                boxShadow: "20px 20px 1px 1px #013F8A",
                 borderRadius: 15,
               }}
             >

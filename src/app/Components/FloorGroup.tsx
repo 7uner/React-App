@@ -1,7 +1,7 @@
 import { useState, MouseEvent, Fragment } from "react";
-import FloorMenu from "./FloorMenu";
-import FloorMenuBirchmount from "./FloorMenuBirchmount";
-import FloorMenuCentenary from "./FloorMenuCentenary";
+import FloorMenu from "../../Pages/FloorMenuGeneral";
+import FloorMenuBirchmount from "../../Pages/FloorMenuBirchmount";
+import FloorMenuCentenary from "../../Pages/FloorMenuCentenary";
 
 function FloorGroup() {
   let floors = ["1st floor", "2nd floor", "3rd floor", "4th floor"];

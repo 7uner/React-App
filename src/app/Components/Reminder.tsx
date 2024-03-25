@@ -61,7 +61,7 @@ function Reminder() {
                 borderRadius: 10,
               }}
             />
-            <p>{data.blurb}</p>
+            <p style={{ textAlign: "center" }}>{data.blurb}</p>
           </div>
         </div>
         <a

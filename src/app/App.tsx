@@ -10,6 +10,10 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import FloorMenuBirchmount from "../Pages/FloorMenuBirchmount";
+import FloorMenuCentenary from "../Pages/FloorMenuCentenary";
+import FloorMenu from "../Pages/FloorMenuGeneral";
+import FloorMenuGeneral from "../Pages/FloorMenuGeneral";
 
 //function app
 function App() {
@@ -32,7 +36,13 @@ function App() {
       </Routes>
 
       <Routes>
-        <Route path="/floorPlan" element={<FloorMap />} />
+        <Route path="/floorPlanGen" element={<FloorMenuGeneral />} />
+      </Routes>
+      <Routes>
+        <Route path="/floorPlanBirch" element={<FloorMenuBirchmount />} />
+      </Routes>
+      <Routes>
+        <Route path="/floorPlanCen" element={<FloorMenuCentenary />} />
       </Routes>
 
       <Routes>
