@@ -143,6 +143,23 @@ async function findMovie() {
   console.log(movie);
 }
 
+async function addFeedBack() {
+  // Get the database and collection on which to run the operation
+  const database = client.db("SHN_Database");
+  const collection = database.collection("UserFeedBack");
+  // create a document to insert
+  const feedback = {
+    fName: "John",
+    lName: "Doe",
+    email: "john.doe@gmail.com",
+    message: "I had a great time!",
+  };
+  // Execute query
+  const result = await collection.insertOne(feedback);
+  // Print the document returned by findOne()
+  console.log(`A document was inserted with the _id: ${result.insertedId}`);
+}
+
 async function runDB() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
@@ -152,7 +169,7 @@ async function runDB() {
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
     );
-    await findMovie();
+    await addFeedBack();
   } finally {
     // Ensures that the client will close when you finish/error
     await client.close();
